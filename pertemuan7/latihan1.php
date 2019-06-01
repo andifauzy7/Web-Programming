@@ -90,7 +90,6 @@
 <body>
 	<h2 style="text-align: center;">Kunjungi Profil Pemain</h2>
 	<?php foreach ($squad as $pemain) : ?>
-		<ul style="text-align: center;">
 			<a href='latihan2.php?
 			nama=<?=$pemain["nama"];?>&
 			posisi=<?=$pemain["posisi"];?>&
@@ -100,13 +99,13 @@
 			'>
 
 			<img src="image\<?=$pemain["gambar"];?>" height="150px"></a>
+
 			<!--
 			<li>Nama Pemain    : <?= $pemain["nama"]; ?></li>
 			<li>Posisi : <?= $pemain["posisi"]; ?></li>
 			<li>Asal Negara : <?= $pemain["asal"]; ?></li>
 			<li>Nomor Punggung : <?= $pemain["nomor"]; ?></li> -->
 
-		</ul>
 	<?php endforeach; ?>
 </body>
 </html>
