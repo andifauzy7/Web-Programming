@@ -1,0 +1,39 @@
+Mengelola Database dengan
+DBMS (Database Management System)
+Oracle, MySQL, SQLServer, PostgreSQL, MongoDB
+Tipe DBMS : Relational, Hierarchical, Network, NoSQL.
+*Semua DBMS menggunakan SQL.
+Database terdiri dari table.
+
+DALAM RDBMS, terdiri dari beberapa tabel.
+Baris Table = Record
+Kolom = Field
+Primary Key. (Unik, merepresentasi keseluruhan Record)
+Pemanggilan database via CMD
+
+Dalam CMD..
+	mysql -u root -p
+	showdatabases; (Jamak)
+	create database (nama)
+	use (databases);
+	create table (namatable);
+	(nama var) (tipe data) (primary key?) (increment?)
+	varchar itu dinamis
+
+Melihat isi table..
+	show tables
+Melihat fitur dalam tabel
+	describe (namatabel);
+Masukkan Data
+	insert into (nama table) values ()
+Menampilkan
+	select * (semua) from (nama table);
+	select (fitur1,fitur2) from (nama table);
+Mencari
+	select * from mahasiswa where fitur='detail';
+Mengganti
+	update mahasiswa set jurusan ='Teknik Industri' where .
+Menghapus
+	delete from (table) where ....
+
+ISTILAH CRUD (CREATE, READ, UPDATE, DELETE)
