@@ -18,16 +18,23 @@ function query($stringsql){
 function tambah($data){
 	global $string_conn;
 
-	$nama=$data["nama"];
-	$posisi=$data["posisi"];
-	$asal=$data["asal"];
-	$nomor=$data["nomor"];
-	$gambar=$data["gambar"];
+	$nama=htmlspecialchars($data["nama"]);
+	$posisi=htmlspecialchars($data["posisi"]);
+	$asal=htmlspecialchars($data["asal"]);
+	$nomor=htmlspecialchars($data["nomor"]);
+	$gambar=htmlspecialchars($data["gambar"]);
 
 	mysqli_query($string_conn,"INSERT INTO pemain VALUES (
 			'','$nama','$posisi','$asal','$nomor','$gambar');
 			");
 
+	return mysqli_affected_rows($string_conn);
+}
+
+function hapus($identitas_id){
+	global $string_conn;
+
+	mysqli_query($string_conn,"DELETE FROM pemain WHERE id=$identitas_id;");
 	return mysqli_affected_rows($string_conn);
 }
 ?>

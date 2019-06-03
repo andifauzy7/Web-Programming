@@ -32,7 +32,7 @@
 		<div class="container">
 			
 			<div style="text-align: center;">
-				<a href="tambah.php"><button type="button" class="btn btn-outline-primary" name="submit">Add Other Players</button></a>
+				<a href="tambah.php"><button type="button" class="btn btn-outline-light" name="submit">Add Other Players</button></a>
 			</div>
 
 			<div class="row">
@@ -52,7 +52,10 @@
 				<?php foreach ($squad as $pemain) : ?>
 				<tr>
 					<td><img src="image/<?=$pemain["gambar"];?>" width="175px" class="mx-auto d-block"></td>
-					<td><a href="">Update</a> | <a href="">Delete</a>
+					<td>
+						<a href=""><button type="button" class="btn btn-outline-success" name="submit">Update</button></a>
+						 | 
+						<a href="hapus.php?id=<?=$pemain['id'];?>" onclick="return confirm('Akan Menghapus Data Pemain?');"><button type="button" class="btn btn-outline-danger" name="submit">Delete</button></a>
 					</td>
 					<td><?=$pemain["nama"];?></td>
 					<td><?=$pemain["posisi"];?></td>
