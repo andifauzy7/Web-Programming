@@ -65,6 +65,13 @@ function filegambar(){
 function hapus($identitas_id){
 	global $string_conn;
 
+	$namafile = query("SELECT gambar FROM pemain WHERE id=$identitas_id;")[0];
+	$namafile = 'image/'.$namafile["gambar"];
+
+	if(file_exists($namafile)){
+		unlink($namafile);
+	}
+	
 	mysqli_query($string_conn,"DELETE FROM pemain WHERE id=$identitas_id;");
 	return mysqli_affected_rows($string_conn);
 }
