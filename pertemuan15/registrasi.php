@@ -1,5 +1,6 @@
 <?php 
 	require 'functions.php';
+	
 	if(isset($_POST["register"])){
 		if(register($_POST)>0){
 			echo '
@@ -13,11 +14,12 @@
 			echo '
 			<script>
 			alert("Register Gagal!");
-			document.location.href= "index.php";
+			document.location.href= "sign.php";
 			</script>
 			';
 		}
 	}
+
  ?>
 
 <!DOCTYPE html>
@@ -55,7 +57,7 @@
 				    		</div>
 				    		<div class="col-6">
 				    			<div style="text-align: right;">
-				    				<button type="submit" class="btn btn-primary" name="login">Login</button>
+				    				<a href="login.php"><button type="submit" class="btn btn-primary" name="login">Login</button></a>
 				    			</div>
 				    		</div>
 				    	</div>
