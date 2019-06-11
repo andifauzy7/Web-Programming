@@ -36,6 +36,10 @@ function tambah($data){
 
 function filegambar(){
 	// Mengembalikan STRING berupa nama gambar.
+	if($_FILES["gambar"]["name"]==NULL){
+		return NULL;
+	}
+
 	$nama = $_FILES["gambar"]["name"];
 	$tipe = $_FILES["gambar"]["type"];
 	$dir = $_FILES["gambar"]["tmp_name"];
@@ -84,8 +88,15 @@ function ubah($data){
 	$asal=htmlspecialchars($data["asal"]);
 	$nomor=htmlspecialchars($data["nomor"]);
 	$gambar=htmlspecialchars($data["gambar"]);
+	$gambardua=filegambar();
 
-	mysqli_query($string_conn,"UPDATE pemain SET
+	if($gambardua!=NULL){
+		$namafile = 'image/'.$gambar;
+		unlink($namafile);
+		$gambar = $gambardua;
+	}
+
+		mysqli_query($string_conn,"UPDATE pemain SET
 		nama='$nama',posisi='$posisi',asal='$asal',nomor='$nomor',gambar='$gambar'
 		WHERE id=$id;
 		");

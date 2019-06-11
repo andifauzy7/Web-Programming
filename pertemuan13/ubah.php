@@ -4,7 +4,6 @@
 	$player=query("SELECT * FROM pemain WHERE id=$id;")[0];
 
 	if(isset($_POST["submit"])){
-
 		if(ubah($_POST)>0){
 			echo '
 				<script>
@@ -53,7 +52,7 @@
 			<div style="text-align: center;">
 				<a href="index.php"><button type="button" class="btn btn-outline-primary" name="submit">Back To List Players</button></a>
 			</div>
-			<form action="" class="was-validated" method="post">
+			<form action="" class="was-validated" method="post" enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-12">
 					<br>
@@ -62,6 +61,7 @@
 			<img src="image\<?=$player['gambar'];?>" width="250px" class="mx-auto d-block">
 			  <div class="form-group">
 			  	<input type="hidden" name="id" value="<?=$player['id'];?>">
+			  	<input type="hidden" name="gambar" value="<?=$player['gambar'];?>">
 			    <label for="nama">Player Name :</label>
 			    <input type="text" class="form-control" id="nama" placeholder="Enter Player" name="nama" value="<?=$player['nama'];?>" required>
 			  </div>
@@ -78,7 +78,7 @@
 
 			  <div class="form-group">
 			    <label for="gambar">Pictures :</label>
-			    <input type="text" class="form-control" id="gambar" placeholder="Enter Pictures" name="gambar" value="<?=$player['gambar'];?>" required>
+			    <input type="file" class="form-control" id="gambar" name="gambar">
 			  </div>
 
 			  <label >Position :</label>
